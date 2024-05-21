@@ -19,5 +19,5 @@ const updateValue = (event: Event) => {
 
 <template>
   <input type="text" :value="modelValue" @input="updateValue" placeholder="Hulk, Ironman, 32, 83..."
-    class="input input-bordered input-accent w-full max-w-xs" />
+    class="input input-bordered input-accent w-full max-w-xs" id="input-search" />
 </template>

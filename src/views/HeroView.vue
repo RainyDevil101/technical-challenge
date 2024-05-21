@@ -1,22 +1,21 @@
 <script setup lang="ts">
 import { Section } from '../components/global'
-import { Default, HeroCard, SearchHero } from '../components/hero';
-import { Hero } from '../interfaces';
+import { Default, HeroCard } from '../components/hero';
+import { useHeroStore } from '../store/heroStore';
 
-defineProps<{
-  hero: Hero | null;
-}>();
+const heroStore = useHeroStore();
 
 </script>
 
 <template>
 
   <Section>
-    <SearchHero />
+    <dialog id="my_modal_2" class="modal">
+
+      <HeroCard v-if="heroStore.getHeroState" :hero="heroStore.getHeroState" :key="heroStore.getHeroState.id" />
+    </dialog>
+
+    <Default v-if="heroStore.getHasErrorState" />
   </Section>
-  <section>
-    <HeroCard v-if="hero" :hero="hero" />
-    <Default v-else />
-  </section>
 
 </template>

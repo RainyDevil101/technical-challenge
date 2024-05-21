@@ -1,5 +1,5 @@
 <template>
-  <div class="my-5">
+  <div class="y-[3rem] max-w-lg w-full">
     <slot />
 
   </div>

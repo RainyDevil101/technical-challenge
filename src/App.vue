@@ -3,21 +3,31 @@ import HeroLayout from './layout/HeroLayout.vue';
 import { Container } from './components/global/index.ts'
 import { LoadingView } from './views';
 import { HeroView } from './views';
-import { useHero } from './composable';
 import { useHeroStore } from './store/heroStore';
+import { SearchHero } from './components/hero';
+import { HeroResult } from './components/heroResults';
 
-const store = useHeroStore();
+const heroStore = useHeroStore();
 
-store.count++
+const { fetchHero } = heroStore;
 
+
+const onSearchHero = (value: string) => {
+  fetchHero(value);
+
+};
 
 </script>
 
 <template>
   <Container>
-    <LoadingView v-if="store.isLoading" />
+    <div class="flex justify-center my-5">
+      <SearchHero @searchHero="onSearchHero" />
+    </div>
+    <LoadingView v-if="heroStore.isLoadingState" />
     <HeroLayout v-else>
-      <HeroView :hero="store.hero" />
+      <HeroView />
+      <HeroResult />
     </HeroLayout>
   </Container>
 </template>

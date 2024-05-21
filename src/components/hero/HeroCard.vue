@@ -1,23 +1,55 @@
 <script setup lang="ts">
 import { Hero } from '../../interfaces';
+import { Section } from '../global';
+import { BiographySection, AppearanceSection, WorkSection, ConnectionSection } from './';
+import PowerStarsSection from './PowerStarsSection.vue';
 
 const props = defineProps<{
-  hero: Hero | null;
+  hero: Hero;
 }>();
+
+const { hero } = props;
+const { name, biography, id, image, appearance, work, connections, powerstats } = hero;
 
 </script>
 
 <template>
 
-  <div class="card card-side bg-base-100 shadow-xl">
-    <figure><img src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" /></figure>
-    <div class="card-body">
-      <h2 class="card-title">New movie is released!</h2>
-      <p>Click the button to watch on Jetflix app.</p>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Watch</button>
-      </div>
-    </div>
+  <!-- Open the modal using ID.showModal() method -->
+
+
+  <div class="text-white modal-box">
+    <Section>
+      <img :src="image.url" :alt="name" class="h-96 object-cover rounded-sm mx-auto" />
+    </Section>
+    <Section>
+      <h2 class="text-3xl text-center font-bold">{{ id }} - {{ name }}</h2>
+
+      <!-- Biography -->
+
+      <BiographySection title="Biography" :biography="biography" />
+
+      <!--  Apareance -->
+
+      <AppearanceSection title="Appearance" :appearance="appearance" />
+
+      <!-- Work -->
+
+      <WorkSection title="Work" :work="work" />
+
+      <!-- Connections -->
+
+      <ConnectionSection title="Connections" :connections="connections" />
+
+      <!-- PowerStats -->
+
+      <PowerStarsSection v-if="powerstats.intelligence !== 'null'" title="Power Stats" :powerstats="powerstats" />
+
+    </Section>
   </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+
 
 </template>
