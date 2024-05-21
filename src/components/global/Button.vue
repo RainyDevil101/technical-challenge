@@ -3,8 +3,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col content-center items-center">
+  <button class="btn btn-accent">
     <slot />
-  </div>
-
+  </button>
 </template>
