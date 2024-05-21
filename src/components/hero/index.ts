@@ -1,6 +1,6 @@
 import HeroCard from './HeroCard.vue';
 import SearchHero from './SearchHero.vue';
-import Default from './Default.vue';
+import Error from './Error.vue';
 import InfoPresentation from './InfoPresentation.vue';
 import InfoWrapper from './InfoWrapper.vue';
 import SubTitleHero from './SubTitleHero.vue';
@@ -16,7 +16,7 @@ import PowerStatsChart from './PowerStatsChart.vue';
 export {
   HeroCard,
   SearchHero,
-  Default,
+  Error,
   InfoPresentation,
   InfoWrapper,
   BiographySection,

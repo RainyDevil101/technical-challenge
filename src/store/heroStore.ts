@@ -7,11 +7,12 @@ import heroByName from '../mock/heroByName.json';
 
 export const useHeroStore = defineStore('hero', {
   state: () => ({
-    hero: null as Hero | null,
-    heros: [] as Hero[],
-    isLoading: false as boolean,
-    hasError: '' as string,
-    useMock: false as boolean,
+    hero: null as Hero | null, // Héroe seleccionado
+    heros: [] as Hero[], // Lista de héroes
+    isLoading: false as boolean, // Indicador de carga
+    hasError: null as null, // Mensaje de error
+    useMock: false as boolean, // Indicador de uso de datos simulados
+    showModal: false as boolean, // Indicador de mostrar modal
   }),
 
   getters: {
@@ -19,13 +20,15 @@ export const useHeroStore = defineStore('hero', {
     getHerosState: (state) => state.heros,
     isLoadingState: (state) => state.isLoading,
     getHasErrorState: (state) => state.hasError,
+    getShowModalState: (state) => state.showModal,
   },
   actions: {
+    // Buscar un héroe por ID o nombre
     async fetchHero(value: string) {
       this.isLoading = true;
       this.hero = null;
       this.heros = [];
-      this.hasError = '';
+      this.hasError = null;
 
       try {
         if (this.useMock) {
@@ -37,7 +40,7 @@ export const useHeroStore = defineStore('hero', {
           console.log('Using real API');
           let response;
 
-          const apiUrl = /^\d+$/.test(value) 
+          const apiUrl = /^\d+$/.test(value)
             ? `${URL}${API_KEY}/${value}`
             : `${URL}${API_KEY}/search/${value}`;
           response = await axios.get(apiUrl);
@@ -61,11 +64,25 @@ export const useHeroStore = defineStore('hero', {
         this.isLoading = false;
       }
     },
+    // Configurar el uso de datos simulados
     setUseMock(value: boolean) {
       this.useMock = value;
     },
+    // Establecer el héroe actual por ID
     setHero(id: string) {
       this.hero = this.heros.find((hero) => hero.id === id) || null;
-    }
+    },
+    // Configurar el estado de carga
+    setIsloading(value: boolean) {
+      this.isLoading = value;
+    },
+    // Configurar el estado de mostrar modal y resetar el héroe si se cierra
+    setShowModal(value: boolean) {
+      this.showModal = value;
+
+      if (value === false) {
+        this.hero = null;
+      }
+    },
   },
 });

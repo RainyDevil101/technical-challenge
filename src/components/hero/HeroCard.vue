@@ -15,10 +15,7 @@ const { name, biography, id, image, appearance, work, connections, powerstats } 
 
 <template>
 
-  <!-- Open the modal using ID.showModal() method -->
-
-
-  <div class="text-white modal-box">
+  <div class="text-white modal-box mx-auto">
     <Section>
       <img :src="image.url" :alt="name" class="h-96 object-cover rounded-sm mx-auto" />
     </Section>
@@ -47,9 +44,5 @@ const { name, biography, id, image, appearance, work, connections, powerstats } 
 
     </Section>
   </div>
-  <form method="dialog" class="modal-backdrop">
-    <button>close</button>
-  </form>
-
 
 </template>

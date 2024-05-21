@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import HeroLayout from './layout/HeroLayout.vue';
-import { Container } from './components/global/index.ts'
+import { Container, Footer } from './components/global/index.ts'
 import { LoadingView } from './views';
 import { HeroView } from './views';
 import { useHeroStore } from './store/heroStore';
@@ -9,18 +9,24 @@ import { HeroResult } from './components/heroResults';
 
 const heroStore = useHeroStore();
 
-const { fetchHero } = heroStore;
+const onSearchHero = async (value: string) => {
+
+  await heroStore.fetchHero(value);
+
+  if (heroStore.getHasErrorState) return;
 
 
-const onSearchHero = (value: string) => {
-  fetchHero(value);
+  if (heroStore.getHeroState) {
+    heroStore.setShowModal(true);
+  }
+
 
 };
 
 </script>
 
 <template>
-  <Container>
+  <Container :class="{ 'modal-open': heroStore.getShowModalState }">
     <div class="flex justify-center my-5">
       <SearchHero @searchHero="onSearchHero" />
     </div>
@@ -30,4 +36,5 @@ const onSearchHero = (value: string) => {
       <HeroResult />
     </HeroLayout>
   </Container>
+  <Footer />
 </template>

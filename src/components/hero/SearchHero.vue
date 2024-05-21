@@ -6,9 +6,10 @@ const emit = defineEmits<{ (e: 'searchHero', value: string): void }>();
 
 const text = ref('');
 const onSearchHero = () => {
-  if (!text.value) return;
-  if (text.value.length === 0) return;
-  emit('searchHero', text.value);
+  const data = text.value.trim();
+  if (!data) return;
+  if (data.length === 0) return;
+  emit('searchHero', data);
   text.value = '';
 };
 
@@ -23,6 +24,6 @@ const onKeyDown = (event: KeyboardEvent) => {
 <template>
   <div id="search-input" class="flex gap-2 py-2">
     <InputText @keydown="onKeyDown" v-model="text" />
-    <Button @click="onSearchHero" >Buscar</Button>
+    <Button @click="onSearchHero">Buscar</Button>
   </div>
 </template>

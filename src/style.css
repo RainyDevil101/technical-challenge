@@ -5,3 +5,12 @@
 html {
   min-height: 100vh;
 }
+
+/* styles.css */
+.modal-open {
+  pointer-events: none;
+}
+
+.modal-open > * {
+  pointer-events: none;
+}
