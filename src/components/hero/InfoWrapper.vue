@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { InfoPresentation } from '.';
 
 const prop = defineProps<{
   title: string
@@ -12,9 +11,9 @@ const { title, text } = prop;
 
 <template>
   <p class="my-1">
-    <InfoPresentation>
+    <span class="font-bold mr-2">
       {{ title }}:
-    </InfoPresentation>
+    </span>
     {{ text }}
   </p>
 </template>

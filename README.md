@@ -21,10 +21,3 @@ El proyecto está estructurado de la siguiente manera:
 1. Clona el repositorio.
 2. Instala las dependencias con `npm install`.
 3. Ejecuta la aplicación con `npm run dev`.
-
-## Cómo Ejecutar los Tests
-
-Ejecuta `npm run test` para correr los tests de la aplicación.
-
-
-[MIT](LICENSE)

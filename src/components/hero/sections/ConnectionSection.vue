@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Connections } from '../../interfaces/hero.interface';
-import { InfoSection } from './';
+import { Connections } from '../../../interfaces/hero.interface';
+import { InfoSection } from '../index';
 
 const props = defineProps<{
   connections: Connections,

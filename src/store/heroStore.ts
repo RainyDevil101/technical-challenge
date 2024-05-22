@@ -33,7 +33,6 @@ export const useHeroStore = defineStore('hero', {
       try {
         if (this.useMock) {
           console.log('Using mock data');
-          console.log(heroById);
           this.hero = heroById as Hero;
           this.heros = heroByName as unknown as Hero[];
         } else {

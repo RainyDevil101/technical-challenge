@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Appearance } from '../../interfaces/hero.interface';
-import { InfoSection } from './';
+import { Appearance } from '../../../interfaces/hero.interface';
+import { InfoSection } from '../index';
 
 const props = defineProps<{
   appearance: Appearance,

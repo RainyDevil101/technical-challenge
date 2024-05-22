@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { Section } from '../global';
-import { PowerStatsChart, SubTitleHero } from '.';
-import { Powerstats } from '../../interfaces/hero.interface';
+import { Section } from '../../global';
+import { PowerStatsChart, SubTitleHero } from '..';
+import { Powerstats } from '../../../interfaces/hero.interface';
 
 const props = defineProps<{
   title: string;

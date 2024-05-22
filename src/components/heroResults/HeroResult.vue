@@ -6,8 +6,6 @@ import { useHeroStore } from '../../store/heroStore';
 const heroStore = useHeroStore();
 
 const onSearchHero = (value: string) => {
-  console.log(value);
-
   if (!value || value.length === 0) return;
   heroStore.setHero(value);
   heroStore.setShowModal(true);

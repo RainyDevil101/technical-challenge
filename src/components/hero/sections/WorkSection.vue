@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Work } from '../../interfaces/hero.interface';
-import { InfoSection } from './';
+import { Work } from '../../../interfaces/hero.interface';
+import { InfoSection } from '../index';
 
 const props = defineProps<{
   work: Work,

@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { Hero } from '../../interfaces';
 import { Section } from '../global';
-import { BiographySection, AppearanceSection, WorkSection, ConnectionSection } from './';
-import PowerStarsSection from './PowerStarsSection.vue';
+import { BiographySection, AppearanceSection, WorkSection, ConnectionSection, PowerStatsSection } from './';
 
 const props = defineProps<{
   hero: Hero;
@@ -40,7 +39,7 @@ const { name, biography, id, image, appearance, work, connections, powerstats } 
 
       <!-- PowerStats -->
 
-      <PowerStarsSection v-if="powerstats.intelligence !== 'null'" title="Power Stats" :powerstats="powerstats" />
+      <PowerStatsSection v-if="powerstats.intelligence !== 'null'" title="Power Stats" :powerstats="powerstats" />
 
     </Section>
   </div>

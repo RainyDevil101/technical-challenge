@@ -7,8 +7,6 @@ import { useHeroStore } from '../store/heroStore';
 
 const heroStore = useHeroStore();
 
-console.log(heroStore.getHerosState.length !== 0);
-
 </script>
 
 <template>

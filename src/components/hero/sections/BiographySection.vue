@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Biography } from '../../interfaces/hero.interface';
-import { InfoSection } from './';
+import { Biography } from '../../../interfaces/hero.interface';
+import { InfoSection } from '../index';
 
 const props = defineProps<{
   biography: Biography,
