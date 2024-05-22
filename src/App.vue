@@ -25,7 +25,7 @@ const onSearchHero = async (value: string) => {
 
 </script>
 
-<template :class="{ 'modal-open': heroStore.getShowModalState }">
+<template >
   <Container >
     <div class="flex justify-center my-5">
       <SearchHero @searchHero="onSearchHero" />
