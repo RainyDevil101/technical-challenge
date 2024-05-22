@@ -4,18 +4,19 @@
 
 html {
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
-/* styles.css */
-.modal-open {
-  pointer-events: none;
-}
-
-.modal-open > * {
-  pointer-events: none;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 p {
   text-wrap: pretty;
   line-height: 1.8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }

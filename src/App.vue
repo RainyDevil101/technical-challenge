@@ -25,8 +25,8 @@ const onSearchHero = async (value: string) => {
 
 </script>
 
-<template >
-  <Container >
+<template>
+  <Container>
     <div class="flex justify-center my-5">
       <SearchHero @searchHero="onSearchHero" />
     </div>

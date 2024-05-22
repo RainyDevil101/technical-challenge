@@ -14,33 +14,27 @@ const { name, biography, id, image, appearance, work, connections, powerstats } 
 
 <template>
 
-  <div class="text-white modal-box mx-auto ">
+  <div class="text-white w-full">
     <Section>
       <img :src="image.url" :alt="name" class="h-96 object-cover rounded-sm mx-auto" />
     </Section>
     <Section>
       <h2 class="text-base text-center font-bold my-5">{{ id }} - {{ name }}</h2>
 
-      <!-- Biography -->
-
+      <!-- Biografía -->
       <BiographySection title="Biography" :biography="biography" />
 
-      <!--  Apareance -->
-
+      <!-- Apariencia -->
       <AppearanceSection title="Appearance" :appearance="appearance" />
 
-      <!-- Work -->
-
+      <!-- Trabajo -->
       <WorkSection title="Work" :work="work" />
 
-      <!-- Connections -->
-
+      <!-- Conexiones -->
       <ConnectionSection title="Connections" :connections="connections" />
 
-      <!-- PowerStats -->
-
+      <!-- Estadísticas de Poder -->
       <PowerStatsSection v-if="powerstats.intelligence !== 'null'" title="Power Stats" :powerstats="powerstats" />
-
     </Section>
   </div>
 
