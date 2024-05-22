@@ -14,3 +14,8 @@ html {
 .modal-open > * {
   pointer-events: none;
 }
+
+p {
+  text-wrap: pretty;
+  line-height: 1.8;
+}

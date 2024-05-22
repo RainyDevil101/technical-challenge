@@ -7,9 +7,9 @@ const heroStore = useHeroStore();
 
 <template>
   <div v-if="heroStore.showModal"
-    class="modal-container fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 mx-auto"
-    @click.self="heroStore.setShowModal(false)">
-    <div @keydown.esc="heroStore.setShowModal(false)">
+    class="modal-container fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 mx-auto w-full"
+    >
+    <div @keydown.esc="heroStore.setShowModal(false)" @click.self="heroStore.setShowModal(false)">
       <slot />
     </div>
 

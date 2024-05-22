@@ -14,7 +14,7 @@ const { title, info } = props;
 <template>
   <Section>
     <SubTitleHero>{{ title }}</SubTitleHero>
-    <div class="flex flex-col items-start my-5 w-full content-center bg-slate-600 rounded-md p-2">
+    <div class="flex flex-col items-start my-5 w-full content-center rounded-md p-1">
       <InfoWrapper v-for="item in info" :key="item.label" :title="item.label" :text="item.value" />
     </div>
   </Section>

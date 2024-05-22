@@ -11,7 +11,7 @@ const { title, text } = prop;
 
 <template>
   <p class="my-1">
-    <span class="font-bold mr-2">
+    <span class="font-medium mr-1">
       {{ title }}:
     </span>
     {{ text }}

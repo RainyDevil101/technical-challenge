@@ -14,12 +14,12 @@ const { name, biography, id, image, appearance, work, connections, powerstats } 
 
 <template>
 
-  <div class="text-white modal-box mx-auto">
+  <div class="text-white modal-box mx-auto ">
     <Section>
       <img :src="image.url" :alt="name" class="h-96 object-cover rounded-sm mx-auto" />
     </Section>
     <Section>
-      <h2 class="text-3xl text-center font-bold">{{ id }} - {{ name }}</h2>
+      <h2 class="text-base text-center font-bold my-5">{{ id }} - {{ name }}</h2>
 
       <!-- Biography -->
 
