@@ -16,9 +16,9 @@ const { name, biography, id, image, appearance, work, connections, powerstats } 
 
   <div class="text-white w-full">
     <Section>
-      <img :src="image.url" :alt="name" class="h-96 object-cover rounded-sm mx-auto" />
+      <img :src="image.url" :alt="name" class="h-[700px] object-cover object-top w-full rounded-sm mx-auto" />
     </Section>
-    <Section>
+    <Section class="p-2">
       <h2 class="text-base text-center font-bold my-5">{{ id }} - {{ name }}</h2>
 
       <!-- Biografía -->

@@ -26,7 +26,7 @@ watch(() => heroStore.showModal, (newVal) => {
   <div v-if="heroStore.showModal"
     class="modal-container fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 px-2"
     @click.self="heroStore.setShowModal(false)">
-    <div class="w-96 md:w-[576px] bg-neutral max-h-[800px] overflow-auto rounded p-2" @keydown.esc="heroStore.setShowModal(false)">
+    <div class="w-96 md:w-[576px] bg-neutral max-h-[700px] overflow-auto rounded" @keydown.esc="heroStore.setShowModal(false)">
       <slot />
     </div>
   </div>
